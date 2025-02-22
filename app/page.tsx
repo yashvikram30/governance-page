@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Building2, Users2 } from "lucide-react"
-import Image from "next/image"
+import * as React from "react";
+import { Building2, Users2 } from "lucide-react";
+import Image from "next/image";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 // Adding Building Works Committee data
 const buildingWorksCommittee = [
@@ -19,13 +19,19 @@ const buildingWorksCommittee = [
     id: 2,
     name: "Dr. Sachin V. Solanki",
     position: "Member",
-    details: ["Joint Director, Technical Education Regional Office", "DTE, Nagpur"],
+    details: [
+      "Joint Director, Technical Education Regional Office",
+      "DTE, Nagpur",
+    ],
   },
   {
     id: 3,
     name: "Dr. Praful Gharpure",
     position: "Member",
-    details: ["Head (Infrastructure Planning & Development)", "Representative of TCS"],
+    details: [
+      "Head (Infrastructure Planning & Development)",
+      "Representative of TCS",
+    ],
   },
   {
     id: 4,
@@ -37,7 +43,10 @@ const buildingWorksCommittee = [
     id: 5,
     name: "Mrs. Varsha Ghushe",
     position: "Member",
-    details: ["Executive Engineer (Civil)", "Representative of Chief Engineer (Civil) PWD, Nagpur"],
+    details: [
+      "Executive Engineer (Civil)",
+      "Representative of Chief Engineer (Civil) PWD, Nagpur",
+    ],
   },
   {
     id: 6,
@@ -57,7 +66,7 @@ const buildingWorksCommittee = [
     position: "Member Secretary",
     details: ["Registrar", "IIIT, Nagpur"],
   },
-]
+];
 
 const boardOfGovernors = [
   {
@@ -94,7 +103,9 @@ const boardOfGovernors = [
     id: 5,
     name: "Dr. (Mrs). B. Padma S. Rao",
     position: "Member",
-    details: ["Chief Scientist and Head Environmental Audit and Policy Implementation Div., CSIR-NEERI, Nagpur"],
+    details: [
+      "Chief Scientist and Head Environmental Audit and Policy Implementation Div., CSIR-NEERI, Nagpur",
+    ],
   },
   {
     id: 6,
@@ -150,7 +161,7 @@ const boardOfGovernors = [
     position: "Member Secretary",
     details: ["Registrar, IIIT, Nagpur"],
   },
-]
+];
 
 const financeCommittee = [
   {
@@ -181,13 +192,19 @@ const financeCommittee = [
     id: 4,
     name: "Dr. Sachin Virsingh Solanki",
     position: "Member",
-    details: ["Joint Director, Technical Education Regional Office", "DTE, Nagpur"],
+    details: [
+      "Joint Director, Technical Education Regional Office",
+      "DTE, Nagpur",
+    ],
   },
   {
     id: 5,
     name: "Shri Piyush Agrawal",
     position: "Member",
-    details: ["Services Delivery Leader", "Tata Consultancy Services Industry Partner"],
+    details: [
+      "Services Delivery Leader",
+      "Tata Consultancy Services Industry Partner",
+    ],
   },
   {
     id: 6,
@@ -195,7 +212,7 @@ const financeCommittee = [
     position: "Member Secretary",
     details: ["Registrar, IIIT, Nagpur"],
   },
-]
+];
 
 const senate = [
   {
@@ -226,19 +243,28 @@ const senate = [
     id: 5,
     name: "Dr. (Mrs) Aparajeeta Ojha",
     position: "Member",
-    details: ["Professor (Department of Computer Science & Engineering)", "IIITDM, Jabalpur"],
+    details: [
+      "Professor (Department of Computer Science & Engineering)",
+      "IIITDM, Jabalpur",
+    ],
   },
   {
     id: 6,
     name: "Dr. (Ms) Pushpa Trivedi",
     position: "Member",
-    details: ["Professor (Department of Humanities)", "Indian Institute of Technology, Bombay"],
+    details: [
+      "Professor (Department of Humanities)",
+      "Indian Institute of Technology, Bombay",
+    ],
   },
   {
     id: 7,
     name: "Dr (Mrs) B. Padma S. Rao",
     position: "Member",
-    details: ["Chief Scientist and Head Environmental Audit and Policy Implementation Division", "CSIR-NEERI, Nagpur"],
+    details: [
+      "Chief Scientist and Head Environmental Audit and Policy Implementation Division",
+      "CSIR-NEERI, Nagpur",
+    ],
   },
   {
     id: 8,
@@ -270,19 +296,37 @@ const senate = [
     position: "Member Secretary",
     details: ["Registrar", "IIIT, Nagpur"],
   },
-]
+];
 
 export default function GovernancePage() {
-  const [activeTab, setActiveTab] = React.useState("board")
+  const [activeTab, setActiveTab] = React.useState("board");
 
   const renderContent = () => {
     switch (activeTab) {
       case "board":
-        return <CommitteeTable title="Board of Governors" date="As on Dt. 01/10/2024" members={boardOfGovernors} />
+        return (
+          <CommitteeTable
+            title="Board of Governors"
+            date="As on Dt. 01/10/2024"
+            members={boardOfGovernors}
+          />
+        );
       case "finance":
-        return <CommitteeTable title="Finance Committee" date="As on Dt. 01/10/2024" members={financeCommittee} />
+        return (
+          <CommitteeTable
+            title="Finance Committee"
+            date="As on Dt. 01/10/2024"
+            members={financeCommittee}
+          />
+        );
       case "senate":
-        return <CommitteeTable title="Senate" date="As on Dt. 01/10/2024" members={senate} />
+        return (
+          <CommitteeTable
+            title="Senate"
+            date="As on Dt. 01/10/2024"
+            members={senate}
+          />
+        );
       case "building":
         return (
           <CommitteeTable
@@ -290,19 +334,19 @@ export default function GovernancePage() {
             date="As on Dt. 01/10/2024"
             members={buildingWorksCommittee}
           />
-        )
+        );
       case "chairman":
-        return <ChairmanProfile />
+        return <ChairmanProfile />;
       case "director":
-        return <DirectorProfile />
+        return <DirectorProfile />;
       case "registrar":
-        return <RegistrarProfile />
+        return <RegistrarProfile />;
       case "staff":
-        return <StaffDirectory />
+        return <StaffDirectory />;
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   return (
     <div className="container mx-auto py-6 px-4 md:px-6">
@@ -333,7 +377,9 @@ export default function GovernancePage() {
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
                   className={`rounded-md px-3 py-2 text-sm font-medium text-left transition-colors ${
-                    activeTab === item.id ? "bg-primary text-primary-foreground" : "hover:bg-muted"
+                    activeTab === item.id
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-muted"
                   }`}
                 >
                   {item.label}
@@ -362,7 +408,9 @@ export default function GovernancePage() {
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
                   className={`rounded-md px-3 py-2 text-sm font-medium text-left transition-colors ${
-                    activeTab === item.id ? "bg-primary text-primary-foreground" : "hover:bg-muted"
+                    activeTab === item.id
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-muted"
                   }`}
                 >
                   {item.label}
@@ -377,7 +425,7 @@ export default function GovernancePage() {
         <ScrollArea className="w-full">{renderContent()}</ScrollArea>
       </div>
     </div>
-  )
+  );
 }
 
 function CommitteeTable({
@@ -385,14 +433,14 @@ function CommitteeTable({
   date,
   members,
 }: {
-  title: string
-  date: string
+  title: string;
+  date: string;
   members: {
-    id: number
-    name: string
-    position: string
-    details?: string[]
-  }[]
+    id: number;
+    name: string;
+    position: string;
+    details?: string[];
+  }[];
 }) {
   return (
     <Card>
@@ -415,7 +463,9 @@ function CommitteeTable({
             <tbody>
               {members.map((member) => (
                 <tr key={member.id} className="border-b last:border-0">
-                  <td className="px-4 py-3 align-top text-center">{member.id}</td>
+                  <td className="px-4 py-3 align-top text-center">
+                    {member.id}
+                  </td>
                   <td className="px-4 py-3">
                     <div className="font-medium">{member.name}</div>
                     {member.details && (
@@ -434,7 +484,7 @@ function CommitteeTable({
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function ChairmanProfile() {
@@ -455,7 +505,7 @@ function ChairmanProfile() {
         <h2 className="text-2xl font-bold">Shri Ravi Sharma</h2>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function DirectorProfile() {
@@ -485,56 +535,136 @@ function DirectorProfile() {
         </div>
         <div className="prose max-w-none">
           <p>
-            Professor Prem Lal Patel, Director, VNIT, Nagpur took over the additional charge as Director of IIIT, Nagpur
-            on 1st October, 2024. He is Professor (HAG) of Hydraulics and Water Resources in Department of Civil
-            Engineering, Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat...
+            Professor Prem Lal Patel, Director, VNIT, Nagpur took over the
+            additional charge as Director of IIIT, Nagpur on 1st October, 2024.
+            He is Professor (HAG) of Hydraulics and Water Resources in
+            Department of Civil Engineering, Sardar Vallabhbhai National
+            Institute of Technology (SVNIT), Surat...
           </p>
           {/* Rest of the biography text */}
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function RegistrarProfile() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-center">Registrar</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="relative w-40 h-48 mx-auto md:mx-0">
-            <Image
-              src="/images/Staff/registrar.jpg"
-              alt="Registrar Shri Kailas N. Dakhale"
-              fill
-              className="object-cover rounded-lg"
-            />
+    <div>
+      {/* Banner Section */}
+      <section className="banner inner-page relative">
+        <div className="banner-img img-responsive">
+          <img
+            src="https://iiitn.ac.in/images/pages/232/ImageBanner.jpg"
+            alt="Registrar Banner"
+            className="w-full h-64 object-cover"
+          />
+        </div>
+        <div className="page-title absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <h1 className="text-4xl font-bold text-white text-center">
+            Administration - Registrar
+          </h1>
+        </div>
+      </section>
+
+      {/* Registrar Profile Section */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          {/* Registrar Details */}
+          <div className="flex flex-col md:flex-row gap-6 p-6">
+            <div className="w-full md:w-40 h-48 mx-auto md:mx-0">
+              <img
+                src="/images/registrar.jpg"
+                alt="Registrar Shri Kailas N. Dakhale"
+                className="w-full h-full object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold text-gray-800">Shri Kailas N. Dakhale</h2>
+              <p className="text-xl font-semibold text-gray-600">Registrar</p>
+              <p className="text-lg text-gray-600">
+                Indian Institute of Information Technology, Nagpur
+              </p>
+              <div className="mt-4 space-y-2">
+                <p className="text-gray-700">
+                  <strong>Email:</strong>{" "}
+                  <a
+                    href="mailto:registrar@iiitn.ac.in"
+                    className="text-blue-600 hover:underline"
+                  >
+                    registrar@iiitn.ac.in
+                  </a>
+                </p>
+                <p className="text-gray-700">
+                  <strong>Contact:</strong> 9421995010
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold">Shri Kailas N. Dakhale</h2>
-            <p className="text-lg font-semibold">Registrar</p>
-            <p>Indian Institute of Information Technology, Nagpur</p>
-            <p className="mt-2">
-              <strong>Email:</strong> registrar@iiitn.ac.in
-            </p>
-            <p>
-              <strong>Contact:</strong> 9421995010
-            </p>
+
+          {/* Profile Section */}
+          <div className="p-6 bg-gray-50">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Profile</h3>
+            <div className="prose max-w-none text-gray-700">
+              <p>
+                An engineer by education and an able Administrator with{" "}
+                <strong>more than 30 Years</strong> of experience, Shri Kailas N. Dakhale
+                has contributed to Central Autonomous Bodies (CABs) like Indian Institute of
+                Technology, Kanpur, Visvesvaraya National Institute of Technology, Nagpur,
+                and Indian Institute of Information Technology, Nagpur for the last two
+                decades.
+              </p>
+              <p>
+                He has vast experience in the administration of Higher Educational
+                Institutions functioning under the Ministry of Education, Government of
+                India. His expertise in identifying the crux of various issues related to
+                Academic and Administrative Matters of Higher Educational Institutions and
+                providing quick solutions has received accolades on numerous occasions.
+              </p>
+              <p>
+                He has worked in Stores Purchase, Personnel Administration & Establishment,
+                Estate Management, DOSA, Training & Placement, Hostel Management, Academic,
+                and Examinations Departments of CABs and has handled all matters related to
+                planning & execution of institute management policies, including liaising
+                with Central/State Government Authorities and Industry.
+              </p>
+              <p>
+                After serving IIT Kanpur for 14 Years in various Departments, Shri Kailas N.
+                Dakhale left IIT as Deputy Registrar and joined VNIT, Nagpur, where he
+                served as Joint Registrar. He was associated with VNIT for about 5 Years,
+                during which he was recognized as an effective communicator with excellent
+                relationship and interpersonal skills. He has also worked in Industry for
+                about 7 years and has handled various matters related to Industrial Workers.
+              </p>
+              <p>
+                <strong>
+                  Later, he got associated with Indian Institute of Information Technology,
+                  Nagpur as I/c Registrar and subsequently joined this “Institution of
+                  National Importance” as Registrar with effect from 7<sup>th</sup> October
+                  2020.
+                </strong>
+              </p>
+              <p>
+                He has also contributed and continues to contribute to the management of
+                Higher Educational Institutions as a Member of various Selection
+                Committees, Review Committees, and Scrutiny Committees of IIT Kanpur, IIT
+                Jodhpur, IIT Gandhinagar, IISER Bhopal, IIPR Kanpur, Central University,
+                Hyderabad, Central University, Sagar, Rajiv Gandhi Institute of Petroleum
+                Technology (RGIPT), Amethi, Mahatma Gandhi Antarrashtriya Hindi
+                VishwaVidyalaya Wardha, Central University of Rajasthan, SVNIT, Surat,
+                MNLU, Nagpur, etc.
+              </p>
+              <p>
+                Shri Kailas N. Dakhale has also contributed to the establishment of Indian
+                Institute of Information Technology, Design & Manufacturing (IIITDM),
+                Jabalpur, and Indian Institute of Technology (IIT), Jodhpur.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="prose max-w-none">
-          <h3 className="text-xl font-semibold">Profile</h3>
-          <p>
-            An engineer by education and an able Administrator by of more than 30 Years, Shri Kailas N. Dakhale, is
-            giving his contribution to the Central Autonomous Bodies (CABs)...
-          </p>
-          {/* Rest of the profile text */}
-        </div>
-      </CardContent>
-    </Card>
-  )
+      </div>
+    </div>
+  );
 }
 
 function StaffDirectory() {
@@ -561,7 +691,8 @@ function StaffDirectory() {
       staff: [
         {
           name: "डॉ मीरा सातव / Dr. Meera Satav",
-          designation: "कनिष्ठ अधीक्षक (प्रशिक्षण एवं नियुक्ति) / Junior Superintendent (T & P)",
+          designation:
+            "कनिष्ठ अधीक्षक (प्रशिक्षण एवं नियुक्ति) / Junior Superintendent (T & P)",
           contact: "9764490050",
           email: "meerajagdale@iiitn.ac.in, tnp@iiitn.ac.in",
         },
@@ -595,7 +726,8 @@ function StaffDirectory() {
       staff: [
         {
           name: "श्री तुषार निमकर / Mr. Tushar Nimkar",
-          designation: "कनिष्ठ सहायक (आंतरिक लेखापरीक्षा) / Junior Assistant (Internal Audit)",
+          designation:
+            "कनिष्ठ सहायक (आंतरिक लेखापरीक्षा) / Junior Assistant (Internal Audit)",
           contact: "8180843224",
           email: "jatrnimkar@iiitn.ac.in",
         },
@@ -629,19 +761,22 @@ function StaffDirectory() {
         },
         {
           name: "श्री शशिकांत भोंगले / Mr. Shashikant Bhongale",
-          designation: "कनिष्ठ अधीक्षक (छात्रावास) / Junior Superintendent (Hostel)",
+          designation:
+            "कनिष्ठ अधीक्षक (छात्रावास) / Junior Superintendent (Hostel)",
           contact: "9049638115",
           email: "shashikant.bhongale@iiitn.ac.in",
         },
         {
           name: "श्री अभिषेक पालीवाल / Mr. Abhishek Paliwal",
-          designation: "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
+          designation:
+            "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
           contact: "8275535335",
           email: "jaaspaliwal@iiitn.ac.in",
         },
         {
           name: "श्री रौनक मूंदड़ा / Mr. Raunak Mundada",
-          designation: "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
+          designation:
+            "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
           contact: "8446573310",
           email: "jarmundada@iiitn.ac.in",
         },
@@ -700,7 +835,8 @@ function StaffDirectory() {
       staff: [
         {
           name: "श्री नीरज जोशी / Mr. Neeraj Joshi",
-          designation: "शारीरिक प्रशिक्षण प्रशिक्षक / Physical Training Instructor",
+          designation:
+            "शारीरिक प्रशिक्षण प्रशिक्षक / Physical Training Instructor",
           contact: "8668552321",
           email: "pti@iiitn.ac.in",
         },
@@ -723,13 +859,15 @@ function StaffDirectory() {
         },
         {
           name: "श्री अमित उपरे / Mr. Amit Upare",
-          designation: "कनिष्ठ टेक्नीशियन (विद्युतीय) / Junior Engineer (Electrical)",
+          designation:
+            "कनिष्ठ टेक्नीशियन (विद्युतीय) / Junior Engineer (Electrical)",
           contact: "7385723577",
           email: "jeahu@iiitn.ac.in",
         },
         {
           name: "श्री योगेश धानुरकर / Mr. Yogesh Dhanurkar",
-          designation: "कनिष्ठ अधिकारी (विद्युतीय) / Junior Officer (Electrical)",
+          designation:
+            "कनिष्ठ अधिकारी (विद्युतीय) / Junior Officer (Electrical)",
           contact: "8830522142",
           email: "joydhanurkar@iiitn.ac.in",
         },
@@ -757,13 +895,15 @@ function StaffDirectory() {
         },
         {
           name: "श्री सुरज शेंडोकार / Mr. Suraj Shendokar",
-          designation: "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
+          designation:
+            "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
           contact: "7770030195",
           email: "jasuraj@iiitn.ac.in",
         },
         {
           name: "श्री निलोबा महाजन / Mr. Niloba Mahajan",
-          designation: "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
+          designation:
+            "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
           contact: "8999296062",
           email: "janamahajan@iiitn.ac.in",
         },
@@ -777,6 +917,22 @@ function StaffDirectory() {
         <CardTitle className="text-center">Staff Directory</CardTitle>
       </CardHeader>
       <CardContent>
+        {/* Add the link to the PDF */}
+        <div className="text-center mb-8">
+          <p className="text-lg font-semibold">
+            <span>Staff Directory PDF: </span>
+            <a
+              href="https://iiitn.ac.in/Downloads/Directory/Directory_2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Click Here
+            </a>
+          </p>
+        </div>
+
+        {/* Render the departments and staff tables */}
         <div className="space-y-8">
           {departments.map((department, index) => (
             <div key={index} className="space-y-4">
@@ -787,10 +943,14 @@ function StaffDirectory() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b">
-                      <th className="px-4 py-2 text-left">क्रमिक संख्या / Sr No.</th>
+                      <th className="px-4 py-2 text-left">
+                        क्रमिक संख्या / Sr No.
+                      </th>
                       <th className="px-4 py-2 text-left">नाम / Name</th>
                       <th className="px-4 py-2 text-left">पद / Designation</th>
-                      <th className="px-4 py-2 text-left">मोबाइल नंबर / Contact</th>
+                      <th className="px-4 py-2 text-left">
+                        मोबाइल नंबर / Contact
+                      </th>
                       <th className="px-4 py-2 text-left">ईमेल आईडी / Email</th>
                     </tr>
                   </thead>
@@ -814,4 +974,3 @@ function StaffDirectory() {
     </Card>
   );
 }
-

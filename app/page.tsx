@@ -493,10 +493,12 @@ function ChairmanProfile() {
       {/* Banner Section */}
       <section className="banner inner-page relative">
         <div className="banner-img img-responsive">
-          <img
-            src="https://iiitn.ac.in/images/pages/25/ImageBanner.jpg" // Replace with the appropriate banner image URL if available
+          <Image
+            src="/images/banner.jpg" // Replace with the appropriate banner image URL if available
             alt="Chairman Banner"
             className="w-full h-64 object-cover"
+            width={10000}
+            height={100}
           />
         </div>
         <div className="page-title absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -1053,7 +1055,7 @@ function StaffDirectory() {
           <p className="text-lg font-semibold">
             <span>Staff Directory PDF: </span>
             <a
-              href="https://iiitn.ac.in/Downloads/Directory/Directory_2025.pdf"
+              href="/Directory_2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline"

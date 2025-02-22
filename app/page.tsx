@@ -538,6 +538,239 @@ function RegistrarProfile() {
 }
 
 function StaffDirectory() {
+  const departments = [
+    {
+      title: "प्रशासन विभाग Administration Department",
+      staff: [
+        {
+          name: "श्री हर्षद पोफली / Mr. Harshad Pophali",
+          designation: "विशेष कार्य अधिकारी / O S D",
+          contact: "9373288110",
+          email: "harshad.pophali@iiitn.ac.in",
+        },
+        {
+          name: "श्री राजेश महादेवराव हक्के / Rajesh Mahadeorao Hakke",
+          designation: "विशेष कार्य अधिकारी / O S D",
+          contact: "9422802007",
+          email: "osdrhakke@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "प्रशिक्षण एवं नियुक्ति / Training & Placement",
+      staff: [
+        {
+          name: "डॉ मीरा सातव / Dr. Meera Satav",
+          designation: "कनिष्ठ अधीक्षक (प्रशिक्षण एवं नियुक्ति) / Junior Superintendent (T & P)",
+          contact: "9764490050",
+          email: "meerajagdale@iiitn.ac.in, tnp@iiitn.ac.in",
+        },
+        {
+          name: "डॉ महेश शुक्ला / Dr. Mahesh Shukla",
+          designation: "अधिकारी (प्रशिक्षण एवं नियुक्ति) Officer (T & P)",
+          contact: "9890070945",
+          email: "otp@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "लेखा विभाग / Account Section",
+      staff: [
+        {
+          name: "कु. शिल्पा मु. पावनकर / Ms. Shilpa Pawankar",
+          designation: "सहायक कुलसचिव (लेखा) / Assistant Registrar (Accounts)",
+          contact: "9730012925",
+          email: "aracct@iiitn.ac.in",
+        },
+        {
+          name: "श्रीमती माधुरी बोबडे / Mrs. Madhuri Bobade",
+          designation: "कनिष्ठ अधिकारी (लेखा) / Junior Officer (Accounts)",
+          contact: "9860538883",
+          email: "jombobade@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "आंतरिक लेखापरीक्षा / Internal Audit",
+      staff: [
+        {
+          name: "श्री तुषार निमकर / Mr. Tushar Nimkar",
+          designation: "कनिष्ठ सहायक (आंतरिक लेखापरीक्षा) / Junior Assistant (Internal Audit)",
+          contact: "8180843224",
+          email: "jatrnimkar@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "तकनीकी अधिकारी / Technical Officer",
+      staff: [
+        {
+          name: "श्री प्रितेश तिवारी / Mr. Pritesh Tiwari",
+          designation: "तकनीकी अधिकारी / Technical Officer",
+          contact: "9425786655",
+          email: "to@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "सामान्य प्रशासनिक विभाग / General Administrative Section",
+      staff: [
+        {
+          name: "श्री अविनाश सूर्यवंशी / Mr. Avinash Suryawanshi",
+          designation: "विशेष कार्य सहयोगी अधिकारी / AOSD",
+          contact: "9960206223",
+          email: "aosd@iiitn.ac.in",
+        },
+        {
+          name: "श्री अनिल पखिडडे / Mr. Anil Pakhidde",
+          designation: "अधिकारी प्रशासन / Officer-Admin",
+          contact: "9970217560",
+          email: "oapakhidde@iiitn.ac.in",
+        },
+        {
+          name: "श्री शशिकांत भोंगले / Mr. Shashikant Bhongale",
+          designation: "कनिष्ठ अधीक्षक (छात्रावास) / Junior Superintendent (Hostel)",
+          contact: "9049638115",
+          email: "shashikant.bhongale@iiitn.ac.in",
+        },
+        {
+          name: "श्री अभिषेक पालीवाल / Mr. Abhishek Paliwal",
+          designation: "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
+          contact: "8275535335",
+          email: "jaaspaliwal@iiitn.ac.in",
+        },
+        {
+          name: "श्री रौनक मूंदड़ा / Mr. Raunak Mundada",
+          designation: "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
+          contact: "8446573310",
+          email: "jarmundada@iiitn.ac.in",
+        },
+        {
+          name: "श्री मोहन उईके / Mr. Mohan Uikey",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "7719043956",
+          email: "jomsuikey@iiitn.ac.in",
+        },
+        {
+          name: "कु. हर्षा नागपुरे / Ms. Harsha Nagpure",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "9096927754",
+          email: "johgnagpure@iiitn.ac.in",
+        },
+        {
+          name: "श्री विकाश सिंह शेखावत / Mr. Vikash Singh Shekhawat",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "7568783847",
+          email: "jovshekhawat@iiitn.ac.in",
+        },
+        {
+          name: "श्रीमती रूपवती जोगी / Mrs. Rupawati Jogi",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "7020647537",
+          email: "jorjogi@iiitn.ac.in",
+        },
+        {
+          name: "श्री शुभम बुरडकर / Mr. Shubham Buradkar",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "8805414194",
+          email: "josburadkar@iiitn.ac.in",
+        },
+        {
+          name: "श्री सुनील ढोले / Mr. Sunil Dhole",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "7875721870",
+          email: "instructor@iiitn.ac.in",
+        },
+        {
+          name: "श्री पवन संजय कटरे / Mr. Pawan Sanjay Katre",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "8390357486",
+          email: "jopkatre@iiitn.ac.in",
+        },
+        {
+          name: "श्री आकाश रामदासराव काकडे / Mr. Akash Ramdasrao Kakde",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "8888984630",
+          email: "joakakade@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "योग एवं खेल प्रशिक्षक / Yoga & Sports Instructor",
+      staff: [
+        {
+          name: "श्री नीरज जोशी / Mr. Neeraj Joshi",
+          designation: "शारीरिक प्रशिक्षण प्रशिक्षक / Physical Training Instructor",
+          contact: "8668552321",
+          email: "pti@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "इंजीनियर / Engineer's",
+      staff: [
+        {
+          name: "श्री अशोक डोंगरे / Mr. Ashok Dongare",
+          designation: "कनिष्ठ अभियंता (सिविल) / Junior Engineer (Civil)",
+          contact: "9689009639",
+          email: "jecivil@iiitn.ac.in",
+        },
+        {
+          name: "श्री अजिंक्य भागवतकर / Mr. Ajinkya Bhagwatkar",
+          designation: "कनिष्ठ अधिकारी (सिविल) / Junior Officer (Civil)",
+          contact: "7770013155",
+          email: "joabhagwatkar@iiitn.ac.in",
+        },
+        {
+          name: "श्री अमित उपरे / Mr. Amit Upare",
+          designation: "कनिष्ठ टेक्नीशियन (विद्युतीय) / Junior Engineer (Electrical)",
+          contact: "7385723577",
+          email: "jeahu@iiitn.ac.in",
+        },
+        {
+          name: "श्री योगेश धानुरकर / Mr. Yogesh Dhanurkar",
+          designation: "कनिष्ठ अधिकारी (विद्युतीय) / Junior Officer (Electrical)",
+          contact: "8830522142",
+          email: "joydhanurkar@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "पुस्तकालय / Library",
+      staff: [
+        {
+          name: "श्री तुषार रंगारी / Mr. Tushar Rangari",
+          designation: "कनिष्ठ अधिकारी (पुस्तकालय) / Junior Officer (Library)",
+          contact: "7020479917",
+          email: "oalibrary@iiitn.ac.in",
+        },
+      ],
+    },
+    {
+      title: "परीक्षा विभाग / Exam Section",
+      staff: [
+        {
+          name: "श्री समीर गुडधे / Mr. Sameer Gudadhe",
+          designation: "कनिष्ठ अधिकारी (प्रशासन) / Junior Officer (Admin)",
+          contact: "9049000178",
+          email: "oa@iiitn.ac.in",
+        },
+        {
+          name: "श्री सुरज शेंडोकार / Mr. Suraj Shendokar",
+          designation: "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
+          contact: "7770030195",
+          email: "jasuraj@iiitn.ac.in",
+        },
+        {
+          name: "श्री निलोबा महाजन / Mr. Niloba Mahajan",
+          designation: "कनिष्ठ सहायक (प्रशासन) / Junior Assistant (Multi-Skilled) Admin",
+          contact: "8999296062",
+          email: "janamahajan@iiitn.ac.in",
+        },
+      ],
+    },
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -545,21 +778,7 @@ function StaffDirectory() {
       </CardHeader>
       <CardContent>
         <div className="space-y-8">
-          {[
-            {
-              title: "प्रशासन विभाग Administration Department",
-              staff: [
-                {
-                  name: "श्री हर्षद पोफली / Mr. Harshad Pophali",
-                  designation: "विशेष कार्य अधिकारी / O S D",
-                  contact: "9373288110",
-                  email: "harshad.pophali@iiitn.ac.in",
-                },
-                // ... other staff members
-              ],
-            },
-            // ... other departments
-          ].map((department, index) => (
+          {departments.map((department, index) => (
             <div key={index} className="space-y-4">
               <h3 className="text-lg font-semibold bg-primary text-primary-foreground p-3 rounded-lg text-center">
                 {department.title}
@@ -593,6 +812,6 @@ function StaffDirectory() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 

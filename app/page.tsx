@@ -489,22 +489,77 @@ function CommitteeTable({
 
 function ChairmanProfile() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-center">Chairman</CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-col items-center space-y-4">
-        <div className="relative w-full max-w-2xl aspect-[2000/900]">
-          <Image
-            src="/images/Shri Ravi Sharma.jpg"
-            alt="Chairman Shri Ravi Sharma"
-            fill
-            className="object-cover rounded-lg"
+    <div>
+      {/* Banner Section */}
+      <section className="banner inner-page relative">
+        <div className="banner-img img-responsive">
+          <img
+            src="https://iiitn.ac.in/images/pages/25/ImageBanner.jpg" // Replace with the appropriate banner image URL if available
+            alt="Chairman Banner"
+            className="w-full h-64 object-cover"
           />
         </div>
-        <h2 className="text-2xl font-bold">Shri Ravi Sharma</h2>
-      </CardContent>
-    </Card>
+        <div className="page-title absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <h1 className="text-4xl font-bold text-white text-center">
+            Administration - Chairman
+          </h1>
+        </div>
+      </section>
+
+      {/* Chairman Profile Section */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          {/* Chairman Details */}
+          <div className="flex flex-col items-center p-6">
+            <div className="relative w-full max-w-2xl aspect-[2000/900]">
+              <Image
+                src="/images/chairperson2.jpg"
+                alt="Chairman Shri Ravi Sharma"
+                className="w-full h-full object-cover rounded-lg shadow-md"
+                width={10000}
+                height={100}
+              />
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mt-6">Shri Ravi Sharma</h2>
+            <p className="text-xl font-semibold text-gray-600">Chairman</p>
+            <p className="text-lg text-gray-600">
+              Indian Institute of Information Technology, Nagpur
+            </p>
+          </div>
+
+          {/* Biography Section (if available) */}
+          <div className="p-6 bg-gray-50">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Biography</h3>
+            <div className="prose max-w-none text-gray-700">
+              <p>
+                Shri Ravi Sharma is the Chairman of the Indian Institute of Information
+                Technology, Nagpur. With a distinguished career spanning several decades,
+                he has made significant contributions to the fields of technology,
+                education, and governance.
+              </p>
+              <p>
+                His visionary leadership and commitment to excellence have been instrumental
+                in shaping the growth and development of IIIT Nagpur. Under his guidance,
+                the institute has achieved remarkable milestones in academic excellence,
+                research, and innovation.
+              </p>
+              <p>
+                Shri Ravi Sharma has held several key positions in both the public and
+                private sectors, bringing a wealth of experience and expertise to his role
+                as Chairman. His dedication to fostering collaboration between academia and
+                industry has been pivotal in creating opportunities for students and
+                faculty alike.
+              </p>
+              <p>
+                He is a strong advocate for leveraging technology to address societal
+                challenges and believes in the transformative power of education to drive
+                progress and development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

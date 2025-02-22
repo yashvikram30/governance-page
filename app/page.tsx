@@ -510,41 +510,113 @@ function ChairmanProfile() {
 
 function DirectorProfile() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-center">Director</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="relative w-48 h-48 mx-auto md:mx-0">
-            <Image
-              src="/images/director.jpg"
-              alt="Director Dr. Prem Lal Patel"
-              fill
-              className="object-cover rounded-lg"
-            />
+    <div>
+      {/* Banner Section */}
+      <section className="banner inner-page relative">
+        <div className="banner-img img-responsive">
+          <Image
+            src="/images/banner.jpg"
+            alt="Director Banner"
+            className="w-full h-64 object-cover"
+            width={10000}
+            height={100}
+          />
+        </div>
+        <div className="page-title absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <h1 className="text-4xl font-bold text-white text-center">
+            Administration - Director
+          </h1>
+        </div>
+      </section>
+
+      {/* Director Profile Section */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          {/* Director Details */}
+          <div className="flex flex-col md:flex-row gap-6 p-6">
+            <div className="w-full md:w-48 h-48 mx-auto md:mx-0">
+              <Image
+                src="/images/director.jpg"
+                alt="Director Dr. Prem Lal Patel"
+                className="w-full h-full object-cover rounded-lg shadow-md"
+                width={10000}
+                height={100}
+              />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold text-gray-800">Dr. Prem Lal Patel</h2>
+              <p className="text-xl font-semibold text-gray-600">Director</p>
+              <p className="text-lg text-gray-600">
+                Indian Institute of Information Technology, Nagpur
+              </p>
+              <div className="mt-4 space-y-2">
+                <p className="text-gray-700">
+                  <strong>Email:</strong>{" "}
+                  <a
+                    href="mailto:director@iiitn.ac.in"
+                    className="text-blue-600 hover:underline"
+                  >
+                    director@iiitn.ac.in
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold">Dr. Prem Lal Patel</h2>
-            <p className="text-lg font-semibold">Director</p>
-            <p>Indian Institute of Information Technology, Nagpur</p>
-            <p className="mt-2">
-              <strong>Email:</strong> director@iiitn.ac.in
-            </p>
+
+          {/* Biography Section */}
+          <div className="p-6 bg-gray-50">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Biography</h3>
+            <div className="prose max-w-none text-gray-700">
+              <p>
+                Professor Prem Lal Patel, Director, VNIT, Nagpur took over the additional
+                charge as Director of IIIT, Nagpur on 1<sup>st</sup> October, 2024. He is
+                Professor (HAG) of Hydraulics and Water Resources in the Department of Civil
+                Engineering, Sardar Vallabhbhai National Institute of Technology (SVNIT),
+                Surat. He served as Deputy Director of the Institute (SVNIT) from September
+                17, 2019, to September 16, 2022. He has also worked as Dean (PG), Dean
+                (R&amp;C), Dean (Academic), and Head of the Department of Civil Engineering
+                at SVNIT Surat.
+              </p>
+              <p>
+                Prior to joining SVNIT in 2007, he served as Associate Professor in the
+                Civil Engineering Department at Delhi College of Engineering (now DTU) for
+                eight years. Before that, he worked as Assistant Executive Engineer (Civil)
+                in the Border Roads Organization (BRO), Ministry of Road Transport and
+                Highways of India, from 1995 to 1999.
+              </p>
+              <p>
+                He completed his Bachelor&#39;s in Civil Engineering from Government
+                Engineering College, Rewa, Madhya Pradesh, India, and pursued his Master&#39;s
+                and Doctoral Degrees in Civil Engineering from the Indian Institute of
+                Technology Roorkee, India (then University of Roorkee).
+              </p>
+              <p>
+                His research areas include River Mechanics and Flood Control, Hydrological
+                Modelling and Optimization of Water Systems, and the Impact of Climate
+                Change on Water Resources Systems. He has guided 14 Doctoral Theses, 49
+                Master Theses, and executed more than six high-value sponsored research
+                projects and over 25 consultancy projects. He has published more than 260
+                papers in peer-reviewed journals and conferences of repute.
+              </p>
+              <p>
+                Prof. Patel is a member of various Technical Societies and Expert
+                Committees. He has visited countries such as the United States of America,
+                the Netherlands, China, Italy, Japan, and Dubai to present his research
+                work. He was earlier part of the Climate Change Working Group of IAHR,
+                dealing with Fluvial Mechanisms. He is also a Fellow member of the Indian
+                Society for Hydraulics, the Indian Water Resources Society, and the
+                Institution of Civil Engineers, India.
+              </p>
+              <p>
+                Prof. Patel has been instrumental in setting up a Centre of Excellence (CoE)
+                on Water Resources &amp; Flood Management at SVNIT Surat through a research
+                grant from the World Bank-sponsored TEQIP-II.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="prose max-w-none">
-          <p>
-            Professor Prem Lal Patel, Director, VNIT, Nagpur took over the
-            additional charge as Director of IIIT, Nagpur on 1st October, 2024.
-            He is Professor (HAG) of Hydraulics and Water Resources in
-            Department of Civil Engineering, Sardar Vallabhbhai National
-            Institute of Technology (SVNIT), Surat...
-          </p>
-          {/* Rest of the biography text */}
-        </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }
 
@@ -554,10 +626,12 @@ function RegistrarProfile() {
       {/* Banner Section */}
       <section className="banner inner-page relative">
         <div className="banner-img img-responsive">
-          <img
-            src="https://iiitn.ac.in/images/pages/232/ImageBanner.jpg"
+          <Image
+            src="/images/banner.jpg"
             alt="Registrar Banner"
             className="w-full h-64 object-cover"
+            width={10000}
+            height={100}
           />
         </div>
         <div className="page-title absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -573,10 +647,12 @@ function RegistrarProfile() {
           {/* Registrar Details */}
           <div className="flex flex-col md:flex-row gap-6 p-6">
             <div className="w-full md:w-40 h-48 mx-auto md:mx-0">
-              <img
+              <Image
                 src="/images/registrar.jpg"
                 alt="Registrar Shri Kailas N. Dakhale"
                 className="w-full h-full object-cover rounded-lg shadow-md"
+                width={10000}
+                height={100}
               />
             </div>
             <div className="flex-1">
